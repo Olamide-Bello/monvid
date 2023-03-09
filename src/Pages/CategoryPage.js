@@ -1,11 +1,11 @@
 import '../App.css';
 import React, { Suspense } from 'react';
 import { Spinner } from 'react-bootstrap';
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
-import FloatingButton from '../Components/FloatingButton';
+import Header from '../Components/Header.js';
+import Footer from '../Components/Footer.js';
+import FloatingButton from '../Components/FloatingButton.js';
 const Category = React.lazy(() =>
-    import('../Components/ProductCategory')
+    import('../Components/ProductCategory.js')
 )
 
 function CategoryPage() {

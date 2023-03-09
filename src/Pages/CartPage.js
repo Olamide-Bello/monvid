@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react'
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
+import Header from '../Components/Header.js'
+import Footer from '../Components/Footer.js'
 import { Spinner } from 'react-bootstrap'
 import FloatingButton from '../Components/FloatingButton'
 const Cart = React.lazy(() =>
-    import('../Components/Cart')
+    import('../Components/Cart.js')
 )
 
 function CartPage() {

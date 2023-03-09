@@ -4,8 +4,8 @@ import { useContext } from 'react'
 import { useMemo } from 'react'
 import { Breadcrumb, BreadcrumbItem, Container } from 'react-bootstrap'
 import { useParams, Link } from "react-router-dom"
-import { GlobalContext } from './GlobalContext'
-import UseFetch from './UseFetch'
+import { GlobalContext } from './GlobalContext.js'
+import UseFetch from './UseFetch.js'
 
 function ProductDetail() {
 

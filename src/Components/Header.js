@@ -6,12 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHotel, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import '../App.css'
-import Search from "./SearchInput";
+import Search from "./SearchInput.js";
 import { useContext, useMemo, useRef } from "react";
-import { GlobalContext } from "./GlobalContext";
-import SignInModal from "./SignIn/SignIn";
-import SignUpModal from "./SignUp.js/SignUp";
-import SearchResult from "./SearchResult/SearchResult";
+import { GlobalContext } from "./GlobalContext.js";
+import SignInModal from "./SignIn/SignIn.js";
+import SignUpModal from "./SignUp.js/SignUp.js";
+import SearchResult from "./SearchResult/SearchResult.js";
 
 function Header() {
     const {handleCategory, cart, user, handleModal, handleSignUpModal, openSignIn, openSignUp} = useContext(GlobalContext)

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { pdf } from '@react-pdf/renderer';
 import { saveAs } from 'file-saver';
-import QuotationDoc from './QuotationDoc';
-import { GlobalContext } from './GlobalContext';
+import QuotationDoc from './QuotationDoc.js';
+import { GlobalContext } from './GlobalContext.js';
 
 function ConfirmationModal({ handleModal }) {
     const { user, cart, bill, cartId } = useContext(GlobalContext)

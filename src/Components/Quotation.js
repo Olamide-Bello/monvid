@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { StyleSheet } from '@react-pdf/renderer';
-import moment from "moment/moment";
-import { GlobalContext } from './GlobalContext';
-import ConfirmationModal from './ConfirmationModal';
+import moment from "moment/moment.js";
+import { GlobalContext } from './GlobalContext.js';
+import ConfirmationModal from './ConfirmationModal.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 

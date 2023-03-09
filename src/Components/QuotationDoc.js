@@ -1,6 +1,6 @@
 import React from 'react'
 import { Document, Page, Text, View, StyleSheet} from '@react-pdf/renderer';
-import moment from "moment/moment";
+import moment from "moment/moment.js";
 
 
 function QuotationDoc({ cart, bill, user, cartId }) {

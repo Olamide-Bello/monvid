@@ -1,12 +1,12 @@
 import '../App.css';
 import React, { Suspense } from 'react';
 import { Spinner } from 'react-bootstrap';
-import ProductsCarousel from '../Components/Carousel';
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
-import FloatingButton from '../Components/FloatingButton';
+import ProductsCarousel from '../Components/Carousel.js';
+import Header from '../Components/Header.js';
+import Footer from '../Components/Footer.js';
+import FloatingButton from '../Components/FloatingButton.js';
 const AllItems = React.lazy(() =>
-    import('../Components/AllProducts')
+    import('../Components/AllProducts.js')
 )
 
 function Home() {
