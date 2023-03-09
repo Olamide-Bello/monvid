@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap"
-import { GlobalContext } from "./GlobalContext"
+import { GlobalContext } from "./GlobalContext.js"
 
 function AllItems
   () {

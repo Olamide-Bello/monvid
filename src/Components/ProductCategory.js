@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useParams, Link } from "react-router-dom"
 import Container from "react-bootstrap/esm/Container";
 import UseFetch from "./UseFetch.js"
-import { GlobalContext } from './GlobalContext';
+import { GlobalContext } from './GlobalContext.js';
 import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
 
 function ProductCategory() {

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { GlobalContext } from './GlobalContext'
+import { GlobalContext } from './GlobalContext.js'
 import { Container } from 'react-bootstrap'
 
 function Cart() {
