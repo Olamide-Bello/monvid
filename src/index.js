@@ -4,7 +4,7 @@ import './index.css';
 import App from './App.js';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-toastify/dist/ReactToastify.css';
-import GlobalState from './Components/GlobalContext';
+import GlobalState from './Components/GlobalContext.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
