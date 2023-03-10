@@ -68,9 +68,9 @@ function Header() {
                         <NavDropdown.Item as={NavLink} to={`/category/kitchen & dining`} onClick={handleCategory} name="Kitchen & Dining" className='dropdown'>Kitchen & Dining</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link as={NavLink}  onClick={handleCart} className="navlinks-item cart"><FontAwesomeIcon className="color-red" icon={faShoppingCart} /><sup><span className="cart-length">{cart.length || 0}</span></sup></Nav.Link>
-                    {!user.name && <Nav.Link as={NavLink} onClick= {handleSignIn} className="navlinks-item"><FontAwesomeIcon icon={faUser} /> Sign in</Nav.Link>}
-                    {!user.name && <button className="account-btn" onClick={handleSignUp}>Create Account</button>}
-                    {user.name && 
+                    {Object.keys(user).length === 0 && user.constructor === Object && <Nav.Link as={NavLink} onClick= {handleSignIn} className="navlinks-item"><FontAwesomeIcon icon={faUser} /> Sign in</Nav.Link>}
+                    {Object.keys(user).length === 0 && user.constructor === Object && <button className="account-btn" onClick={handleSignUp}>Create Account</button>}
+                    {Object.keys(user).length > 0 && user.constructor === Object && 
                         <div className="user-avatar">
                             <strong>{userInitials.current}</strong>
                             <div className="user-menu">
