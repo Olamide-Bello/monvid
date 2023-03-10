@@ -14,17 +14,18 @@ import SignUpModal from "./SignUp.js/SignUp.js";
 import SearchResult from "./SearchResult/SearchResult.js";
 
 function Header() {
-    const {handleCategory, cart, user, handleModal, handleSignUpModal, openSignIn, openSignUp} = useContext(GlobalContext)
+    const {handleCategory, cart, user, token, handleModal, handleSignUpModal, openSignIn, openSignUp} = useContext(GlobalContext)
     const userInitials= useRef(null)
     const navigate= useNavigate()
 
     const handleCart = () => {
-        if(Object.keys(user).length === 0 && user.constructor === Object) {
+        if(token.length === 0) {
             handleModal()
         } else {
             navigate('/cart')
         }
     }
+    console.log(user)
 
     const handleSignIn= () => {
         handleModal()
@@ -68,9 +69,9 @@ function Header() {
                         <NavDropdown.Item as={NavLink} to={`/category/kitchen & dining`} onClick={handleCategory} name="Kitchen & Dining" className='dropdown'>Kitchen & Dining</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link as={NavLink}  onClick={handleCart} className="navlinks-item cart"><FontAwesomeIcon className="color-red" icon={faShoppingCart} /><sup><span className="cart-length">{cart.length || 0}</span></sup></Nav.Link>
-                    {Object.keys(user).length === 0 && user.constructor === Object && <Nav.Link as={NavLink} onClick= {handleSignIn} className="navlinks-item"><FontAwesomeIcon icon={faUser} /> Sign in</Nav.Link>}
-                    {Object.keys(user).length === 0 && user.constructor === Object && <button className="account-btn" onClick={handleSignUp}>Create Account</button>}
-                    {Object.keys(user).length > 0 && user.constructor === Object && 
+                    {token.length === 0 && <Nav.Link as={NavLink} onClick= {handleSignIn} className="navlinks-item"><FontAwesomeIcon icon={faUser} /> Sign in</Nav.Link>}
+                    {token.length === 0 && <button className="account-btn" onClick={handleSignUp}>Create Account</button>}
+                    {token.length > 0 && 
                         <div className="user-avatar">
                             <strong>{userInitials.current}</strong>
                             <div className="user-menu">
