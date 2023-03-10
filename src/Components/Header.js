@@ -71,7 +71,7 @@ function Header() {
                     <Nav.Link as={NavLink}  onClick={handleCart} className="navlinks-item cart"><FontAwesomeIcon className="color-red" icon={faShoppingCart} /><sup><span className="cart-length">{cart.length || 0}</span></sup></Nav.Link>
                     {token === '' && <Nav.Link as={NavLink} onClick= {handleSignIn} className="navlinks-item"><FontAwesomeIcon icon={faUser} /> Sign in</Nav.Link>}
                     {token === '' && <button className="account-btn" onClick={handleSignUp}>Create Account</button>}
-                    {token.length > 0 && 
+                    {token && token !== '' && 
                         <div className="user-avatar">
                             <strong>{userInitials.current}</strong>
                             <div className="user-menu">
