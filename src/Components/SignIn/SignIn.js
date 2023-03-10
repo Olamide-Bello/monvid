@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import { useForm } from 'react-hook-form';
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap/esm/index.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import './SignIn.css'

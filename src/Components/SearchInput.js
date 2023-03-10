@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "./GlobalContext.js";
-import Container from "react-bootstrap/esm/Container";
+import { Container } from 'react-bootstrap/esm/index.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import '../App.css';
