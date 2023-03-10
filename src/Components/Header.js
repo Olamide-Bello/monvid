@@ -1,4 +1,4 @@
-import Navbar from "react-bootstrap/esm/Navbar";
+import Navbar from "react-bootstrap/esm/Navbar.js";
 import Nav from 'react-bootstrap/Nav';
 import { NavLink, useNavigate } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
