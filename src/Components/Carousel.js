@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel } from "react-bootstrap/esm/index.js";
 import bedding from ".//Images/Bedding.jpg"
 import amenity from ".//Images/Amenities.jpg"
 import furniture from ".//Images/furniture.jpg"

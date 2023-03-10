@@ -1,7 +1,7 @@
 import Navbar from "react-bootstrap/esm/Navbar.js";
-import Nav from 'react-bootstrap/Nav';
+import Nav from 'react-bootstrap/esm/Nav.js';
 import { NavLink, useNavigate } from "react-router-dom";
-import { NavDropdown } from "react-bootstrap";
+import { NavDropdown } from "react-bootstrap/esm/index.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHotel, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";

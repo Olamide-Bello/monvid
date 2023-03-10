@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { useMemo } from 'react'
-import { Breadcrumb, BreadcrumbItem, Container } from 'react-bootstrap'
+import { Breadcrumb, BreadcrumbItem, Container } from 'react-bootstrap/esm/index.js'
 import { useParams, Link } from "react-router-dom"
 import { GlobalContext } from './GlobalContext.js'
 import UseFetch from './UseFetch.js'

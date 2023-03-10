@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom"
 import { Container } from 'react-bootstrap/esm/index.js'
 import UseFetch from "./UseFetch.js"
 import { GlobalContext } from './GlobalContext.js';
-import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap/esm/index.js';
 
 function ProductCategory() {
   const { name } = useParams()
