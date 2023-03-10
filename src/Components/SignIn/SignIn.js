@@ -28,7 +28,7 @@ function SignInModal() {
     const OnSubmit = async (data) => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
+        myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
         const raw = JSON.stringify(data);
         console.log(raw)
         const requestOptions = {

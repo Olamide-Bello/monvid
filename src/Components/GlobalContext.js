@@ -85,7 +85,7 @@ function GlobalState({ children }) {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("Authorization", `Bearer ${token}`)
-            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
+            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
             const updated = { itemId: id, quantity:qty }
             const raw = JSON.stringify(updated);
             const requestOptions = {
@@ -112,7 +112,7 @@ function GlobalState({ children }) {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Authorization", `Bearer ${token}`)
-        myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
+        myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
         const id = e.currentTarget.id
     
         const requestOptions = {
@@ -147,7 +147,7 @@ function GlobalState({ children }) {
         (async () => {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
+            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
             const requestOptions = {
                 method: 'GET',
                 headers: myHeaders,
@@ -181,7 +181,7 @@ function GlobalState({ children }) {
     useEffect(() => {
         (async () => {
             const myHeaders = new Headers();
-            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
+            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
             myHeaders.append("Authorization", `Bearer ${token}`)
             const requestOptions = {
                 method: 'GET',
@@ -211,7 +211,7 @@ function GlobalState({ children }) {
         (async () => {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
+            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
             const requestOptions = {
                 method: 'GET',
                 headers: myHeaders,

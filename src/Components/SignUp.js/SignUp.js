@@ -27,7 +27,7 @@ function SignUpModal() {
     const OnSubmit = async (data) => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
+        myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
         const updated = {...data, userType: "user"}
         console.log(updated)
         const raw = JSON.stringify(updated);
