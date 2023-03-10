@@ -27,7 +27,7 @@ function SignUpModal() {
     const OnSubmit = async (data) => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3001");
+        myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
         const updated = {...data, userType: "user"}
         console.log(updated)
         const raw = JSON.stringify(updated);
@@ -38,7 +38,7 @@ function SignUpModal() {
             redirect: 'follow',
             mode: 'cors'
         };
-        const response = await fetch('http://localhost:3000/users/signup', requestOptions)
+        const response = await fetch('https://api-monvid.onrender.com/users/signup', requestOptions)
         const result = await response.json()
         dataRef.current= result
         logUser(dataRef.current.token)

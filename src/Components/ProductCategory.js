@@ -8,7 +8,7 @@ import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap/esm/index.js';
 function ProductCategory() {
   const { name } = useParams()
   const { category } = useContext(GlobalContext)
-  const data = UseFetch(`http://localhost:3000/item/category/?catName=${name}`)
+  const data = UseFetch(`https://api-monvid.onrender.com/item/category/?catName=${name}`)
 
   return (
     <div>

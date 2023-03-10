@@ -85,7 +85,7 @@ function GlobalState({ children }) {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("Authorization", `Bearer ${token}`)
-            myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3001");
+            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
             const updated = { itemId: id, quantity:qty }
             const raw = JSON.stringify(updated);
             const requestOptions = {
@@ -95,7 +95,7 @@ function GlobalState({ children }) {
                 redirect: 'follow',
                 mode: 'cors'
             };
-            const response = await fetch('http://localhost:3000/cart', requestOptions)
+            const response = await fetch('https://api-monvid.onrender.com/cart', requestOptions)
             if (response.ok) {
                 const result = await response.json()
                 console.log(result)
@@ -112,7 +112,7 @@ function GlobalState({ children }) {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Authorization", `Bearer ${token}`)
-        myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3001");
+        myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
         const id = e.currentTarget.id
     
         const requestOptions = {
@@ -121,7 +121,7 @@ function GlobalState({ children }) {
             redirect: 'follow',
             mode: 'cors'
         };
-        const response = await fetch(`http://localhost:3000/cart/?itemId=${id}`, requestOptions)
+        const response = await fetch(`https://api-monvid.onrender.com/cart/?itemId=${id}`, requestOptions)
         if (response.ok) {
             const result = await response.json()
             console.log(result)
@@ -147,14 +147,14 @@ function GlobalState({ children }) {
         (async () => {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3001");
+            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
             const requestOptions = {
                 method: 'GET',
                 headers: myHeaders,
                 redirect: 'follow',
                 mode: 'cors'
             };
-            const response = await fetch("http://localhost:3000/item/items", requestOptions)
+            const response = await fetch("https://api-monvid.onrender.com/item/items", requestOptions)
             if (response.ok) {
                 const result = await response.json()
                 setAllProducts(result)
@@ -181,7 +181,7 @@ function GlobalState({ children }) {
     useEffect(() => {
         (async () => {
             const myHeaders = new Headers();
-            myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3001");
+            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
             myHeaders.append("Authorization", `Bearer ${token}`)
             const requestOptions = {
                 method: 'GET',
@@ -189,7 +189,8 @@ function GlobalState({ children }) {
                 redirect: 'follow',
                 mode: 'cors'
             };
-            const response = await fetch("http://localhost:3000/cart", requestOptions)
+
+            const response = await fetch("https://api-monvid.onrender.com/cart", requestOptions)
             if (response.status === 200) {
                 const result = await response.json()
                 console.log(result)
@@ -200,7 +201,6 @@ function GlobalState({ children }) {
         })
             ()
     }, [token])
-
     useMemo(() => {
         if (searchParam === "") {
             setSearchResult([])
@@ -211,7 +211,7 @@ function GlobalState({ children }) {
         (async () => {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3001");
+            myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev/");
             const requestOptions = {
                 method: 'GET',
                 headers: myHeaders,
@@ -219,7 +219,7 @@ function GlobalState({ children }) {
                 mode: 'cors'
             };
             if (searchParam) {
-                const response = await fetch(`http://localhost:3000/item/search/${searchParam}`, requestOptions)
+                const response = await fetch(`https://api-monvid.onrender.com/item/search/${searchParam}`, requestOptions)
                 if (response.status === 200) {
                     const result = await response.json()
                     setSearchResult(result)

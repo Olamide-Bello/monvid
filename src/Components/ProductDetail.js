@@ -12,8 +12,8 @@ function ProductDetail() {
     const { id, category } = useParams()
     const {handleCategory, handleCart} = useContext(GlobalContext)
     const [qty, setQty] = useState("1")
-    const data = UseFetch(`http://localhost:3000/item/items/${id}`)
-    const suggestedProduct = UseFetch(`http://localhost:3000/item/category/?catName=${category}`)
+    const data = UseFetch(`https://api-monvid.onrender.com/item/items/${id}`)
+    const suggestedProduct = UseFetch(`https://api-monvid.onrender.com/item/category/?catName=${category}`)
     const product= useMemo(()=> suggestedProduct.filter((prod) => {
         return (prod._id !== id)
     }), [id, suggestedProduct])
