@@ -68,7 +68,7 @@ function Header() {
                         <NavDropdown.Item as={NavLink} to={`/category/furnitures`} onClick={handleCategory} name="Furnitures" className='dropdown'>Furniture & Fixture</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to={`/category/kitchen & dining`} onClick={handleCategory} name="Kitchen & Dining" className='dropdown'>Kitchen & Dining</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link as={NavLink}  onClick={handleCart} className="navlinks-item cart"><FontAwesomeIcon className="color-red" icon={faShoppingCart} /><sup><span className="cart-length">{cart.length || 0}</span></sup></Nav.Link>
+                    <button  onClick={handleCart} className="navlinks-item cart"><FontAwesomeIcon className="color-red" icon={faShoppingCart} /><sup><span className="cart-length">{cart.length || 0}</span></sup></button>
                     {!logged && <Nav.Link as={NavLink} onClick= {handleSignIn} className="navlinks-item"><FontAwesomeIcon icon={faUser} /> Sign in</Nav.Link>}
                     {!logged && <button className="account-btn" onClick={handleSignUp}>Create Account</button>}
                     {logged && 
