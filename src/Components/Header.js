@@ -19,10 +19,10 @@ function Header() {
     const navigate= useNavigate()
 
     const handleCart = () => {
-        if(!logged) {
-            handleModal()
-        } else {
+        if(logged) {
             navigate('/cart')
+        } else {
+            handleModal()
         }
     }
 
