@@ -75,7 +75,7 @@ function Header() {
                         <div className="user-avatar">
                             <strong>{userInitials.current}</strong>
                             <div className="user-menu">
-                                <div><div className="user-avatar"><strong>{userInitials.current}</strong></div><h4><strong>Welcome back, {user.name}</strong></h4></div>
+                                <div><div className="user-avatar"><strong>{userInitials.current}</strong></div><h4><strong>Welcome back, {logged && user.name}</strong></h4></div>
                                 <p><a href="/home">Change Password</a></p>
                                 <p><a href="/home">Contact us</a></p>
                                 <button className="log-out-btn" onClick={handleLogOut}>Log Out</button>
