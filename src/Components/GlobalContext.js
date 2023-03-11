@@ -52,7 +52,7 @@ function GlobalState({ children }) {
     const [user, setUser] = useState(
         () => {
             const savedUser = localStorage.getItem("user");
-            if (Object.keys(savedUser).length === 0 && savedUser.constructor === Object) {
+            if (Object.keys(savedUser).length > 0 && savedUser.constructor === Object) {
                 return JSON.parse(savedUser);
             } else {
                 return {};
