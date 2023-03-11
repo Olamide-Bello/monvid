@@ -16,6 +16,8 @@ export const GlobalContext = createContext({
     handleCart: () => { },
     deleteItem: () => { },
     logUser: () => { },
+    logged: false,
+    logOut: () => {},
     handleModal: () => { },
     handleSignUpModal: () => { },
     openSignIn: false,
@@ -32,6 +34,7 @@ function GlobalState({ children }) {
     const searchValue = useRef("")
     const [openSignIn, setOpenSignIn] = useState(false)
     const [openSignUp, setOpenSignUp] = useState(false)
+    const [logged, setLogged] = useState(false)
     const [category, setCategory] = useState("")
     const [token, setToken] = useState(
         () => {
@@ -78,6 +81,11 @@ function GlobalState({ children }) {
     const handleCategory = (e) => {
         setCategory(e.target.name)
     }
+
+    const logOut = () => {
+        setLogged(false)
+    }
+
     const handleCart = async (id, qty) => {
         if (Object.keys(user).length === 0 && user.constructor === Object) {
             handleModal()
@@ -142,6 +150,7 @@ function GlobalState({ children }) {
 
     const handleUser = (userData) => {
         setUser(userData)
+        setLogged(true)
     }
     useEffect(() => {
         (async () => {
@@ -255,6 +264,8 @@ function GlobalState({ children }) {
         handleCart,
         deleteItem,
         logUser,
+        logged,
+        logOut,
         handleModal,
         handleSignUpModal,
         openSignIn,
