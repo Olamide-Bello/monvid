@@ -39,6 +39,7 @@ function SignInModal() {
             mode: 'cors'
         };
         const response = await fetch('https://api-monvid.onrender.com/users/login', requestOptions)
+        console.log(response)
         const result = await response.json()
         dataRef.current= result
         logUser(dataRef.current.token)
