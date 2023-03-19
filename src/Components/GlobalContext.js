@@ -24,6 +24,8 @@ export const GlobalContext = createContext({
     openSignUp: false,
     user: {},
     handleUser: () => { },
+    matches: window.matchMedia("(max-width: 768px)").matches,
+    normalScreen: window.matchMedia("(min-width: 768px) and (max-width: 1100px)").matches
 })
 
 function GlobalState({ children }) {
@@ -61,10 +63,11 @@ function GlobalState({ children }) {
         }
     )
     const [matches, setMatches] = useState(
-        window.matchMedia("(min-width: 768px)").matches
+        window.matchMedia("(max-width: 768px)").matches
     )
-
-
+    const [normalScreen, setNormalScreen] = useState(
+        window.matchMedia("(min-width: 768px) and (max-width: 1100px)").matches
+    )
     const handleModal= () => {
         setOpenSignIn(!openSignIn)
     }
@@ -174,8 +177,13 @@ function GlobalState({ children }) {
 
     useEffect(() => {
         window
-            .matchMedia("(min-width: 768px)")
+            .matchMedia("(max-width: 768px)")
             .addEventListener('change', e => setMatches(e.matches));
+    }, []);
+    useEffect(() => {
+        window
+            .matchMedia("(min-width: 769px) and (max-width: 1100px)")
+            .addEventListener('change', e => setNormalScreen(e.matches));
     }, []);
     useEffect(() => {
         localStorage.setItem("token", token);
@@ -272,6 +280,7 @@ function GlobalState({ children }) {
         openSignUp,
         user,
         handleUser,
+        normalScreen
     }
     return (
         <GlobalContext.Provider value={contextValue}>

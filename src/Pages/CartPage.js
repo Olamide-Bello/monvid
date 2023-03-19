@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import Header from '../Components/Header.js'
+import Header from '../Components/Header/Header.js'
 import Footer from '../Components/Footer.js'
 import { Spinner } from 'react-bootstrap'
 import FloatingButton from '../Components/FloatingButton.js'
