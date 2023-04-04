@@ -60,7 +60,7 @@ function SignInModal() {
                         <FontAwesomeIcon className={matches ? 'mobile-modal-exit' : 'modal-exit'} icon={faXmark} size={matches ? 'lg' :  '2x'} onClick={toggleModal} />
                     </div>
                     <form onSubmit={handleSubmit(OnSubmit)}>
-                        <div className='form-group'>
+                        <div className={matches ? 'mobile-form-group' : 'form-group'}>
                             <input
                                 type="email"
                                 name="email"
@@ -78,7 +78,7 @@ function SignInModal() {
                             />
                             {errors.email && <p className="errorMsg">{errors.email.message}</p>}
                         </div>
-                        <div className='form-group'>
+                        <div className={matches ? 'mobile-form-group' : 'form-group'}>
                             <input
                                 type="password"
                                 name="password"
