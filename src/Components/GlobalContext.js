@@ -56,7 +56,6 @@ function GlobalState({ children }) {
             const savedUser = localStorage.getItem("user");
             if (token) {
                 setLogged(true)
-                window.location.reload(true)
                 return JSON.parse(savedUser);
             } else {
                 return {};
@@ -191,6 +190,7 @@ function GlobalState({ children }) {
     }, [token])
     useEffect(() => {
         localStorage.setItem("user", JSON.stringify(user));
+        window.location.reload(true)
     }, [user])
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
