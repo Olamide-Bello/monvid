@@ -66,7 +66,7 @@ function GlobalState({ children }) {
         window.matchMedia("(max-width: 768px)").matches
     )
     const [normalScreen, setNormalScreen] = useState(
-        window.matchMedia("(min-width: 768px) and (max-width: 1100px)").matches
+        window.matchMedia("(min-width: 769px) and (max-width: 1100px)").matches
     )
     const handleModal= () => {
         setOpenSignIn(!openSignIn)

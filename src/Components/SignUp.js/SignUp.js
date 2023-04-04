@@ -4,11 +4,12 @@ import { Container } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import './SignUp.css'
+import './Mobile.css'
 import { toast } from 'react-toastify';
 import { GlobalContext } from '../GlobalContext.js';
 
 function SignUpModal() {
-    const {logUser, handleUser, handleSignUpModal, handleModal} = useContext(GlobalContext)
+    const {logUser, handleUser, handleSignUpModal, handleModal, matches} = useContext(GlobalContext)
     const dataRef = useRef(null)
     const {
         register,
@@ -50,13 +51,13 @@ function SignUpModal() {
     }
 
     return (
-        <div className='modal-container'>
-            <div className='sign-up-modal'>
+        <div className={matches ? "mobile-modal-container" : 'modal-container'}>
+            <div className={ matches ? 'mobile-sign-in-modal' :'sign-in-modal'}>
                 <Container>
-                    <div className='modal-header'>
+                    <div className={matches ? 'mobile-modal-header' : 'modal-header'}>
                         <h1><strong>Create a Monvid user account</strong></h1>
                         <p><em>Sign up to shop for your hotel supplies</em></p>
-                        <FontAwesomeIcon className='modal-exit' icon={faXmark} size='2x' onClick={toggleModal} />
+                        <FontAwesomeIcon className={matches ? 'mobile-modal-exit' : 'modal-exit'} icon={faXmark} size={matches ? 'lg' :  '2x'} onClick={toggleModal} />
 
                     </div>
                     <form onSubmit={handleSubmit(OnSubmit)}>

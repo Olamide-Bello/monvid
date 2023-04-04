@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Carousel } from "react-bootstrap/esm/index.js";
-import bedding from ".//Images/Bedding.jpg"
-import amenity from ".//Images/Amenities.jpg"
-import furniture from ".//Images/furniture.jpg"
-import tablewares from ".//Images/tablewares.jpg"
+import bedding from "../Images/Bedding.jpg"
+import amenity from "../Images/Amenities.jpg"
+import furniture from "../Images/furniture.jpg"
+import tablewares from "../Images/tablewares.jpg"
+import './Carousel.css'
+import './Mobile.css'
+import { GlobalContext } from "../GlobalContext.js";
 function ProductsCarousel () {
+    const {matches} = useContext(GlobalContext)
+    console.log(matches)
     return (
         <div className="carousel-body">
             <Carousel>
                 <Carousel.Item>
                     <img
-                    className="carousel-item-img"
+                    className= {matches ? "mobile-carousel-img" : "carousel-item-img"}
                     src={bedding}
                     alt="bedding"
                     />

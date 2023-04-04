@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHotel, faShoppingCart, faMagnifyingGlass, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import './Header.css'
+import './Mobile.css'
 import Search from "./SearchInput.js";
 import { useContext, useMemo, useRef, useState } from "react";
 import { GlobalContext } from "../GlobalContext.js";
@@ -18,7 +19,6 @@ function Header() {
     const [showSearch, setShowSearch] = useState(false)
     const userInitials = useRef(null)
     const navigate = useNavigate()
-    console.log(normalScreen)
     const handleCart = () => {
         if (!logged) {
             handleModal()
@@ -58,7 +58,7 @@ function Header() {
         }
     }, [user])
     return (
-        <Navbar sticky="top" className="header">
+        <Navbar sticky="top" className= {matches? "mobile-header" : "header"}>
             <div className="header-content">
                 <Navbar.Brand className="brand-name"><Nav.Link as={NavLink} to="/home" end className="no-hover"><strong>monvid</strong><FontAwesomeIcon icon={faHotel} /></Nav.Link></Navbar.Brand>
                 {showSearch && normalScreen && <Search showSearch={showSearch} />}
@@ -67,7 +67,7 @@ function Header() {
 
                 <Nav className="nav" >
                     {normalScreen && <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} size="lg" onClick={handleSearch} />}
-                    <Nav.Link as={NavLink} to="/home" className="navlinks-item">About</Nav.Link>
+                    {!matches && <Nav.Link as={NavLink} to="/home" className="navlinks-item">About</Nav.Link>}
                     <NavDropdown id="nav-dropdown-dark-example"
                         title="Categories"
                         drop="down"
