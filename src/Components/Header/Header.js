@@ -19,6 +19,7 @@ function Header() {
     const [showSearch, setShowSearch] = useState(false)
     const userInitials = useRef(null)
     const navigate = useNavigate()
+    console.log(logged)
     const handleCart = () => {
         if (!logged) {
             handleModal()
