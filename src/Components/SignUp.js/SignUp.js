@@ -30,7 +30,6 @@ function SignUpModal() {
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
         const updated = {...data, userType: "user"}
-        console.log(updated)
         const raw = JSON.stringify(updated);
         const requestOptions = {
             method: 'POST',
@@ -44,7 +43,6 @@ function SignUpModal() {
         dataRef.current= result
         logUser(dataRef.current.token)
         handleUser(dataRef.current.user)
-        console.log(dataRef.current.token)
         toast.success("Welcome back!")
         handleSignUpModal()
 

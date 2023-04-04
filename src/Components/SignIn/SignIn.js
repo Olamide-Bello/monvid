@@ -31,7 +31,6 @@ function SignInModal() {
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Allow-Origin", "https://monvid.pages.dev");
         const raw = JSON.stringify(data);
-        console.log(raw)
         const requestOptions = {
             method: 'POST',
             headers: myHeaders,
@@ -40,14 +39,12 @@ function SignInModal() {
             mode: 'cors'
         };
         const response = await fetch('https://api-monvid.onrender.com/users/login', requestOptions)
-        console.log(response)
         const result = await response.json()
         dataRef.current= result
         logUser(dataRef.current.token)
         handleUser(dataRef.current.user)
         toast.success("Welcome back!")
         handleModal()
-
     }
 
     return (

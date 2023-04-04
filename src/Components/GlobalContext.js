@@ -56,6 +56,7 @@ function GlobalState({ children }) {
             const savedUser = localStorage.getItem("user");
             if (token) {
                 setLogged(true)
+                window.location.reload(true)
                 return JSON.parse(savedUser);
             } else {
                 return {};
