@@ -97,7 +97,7 @@
 .user-menu {
     position: absolute;
     right: 10px;
-    top: 50px;
+    top: 80px;
     width: 250px;
     height: 250px;
     background-color: #fff;
@@ -193,7 +193,7 @@
     text-indent: 30px;
 }
 
-.input:focus {
+.search .searchArea .input:focus {
     border: 2px orangered solid;
     outline: orangered;
 }
