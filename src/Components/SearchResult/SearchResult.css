@@ -27,12 +27,12 @@ a.result-link:not(:first-of-type)>.search-item  {
     border-top: 2px #aaa solid;
 }
 
-.search-result~.search-item>img {
+.search-result .search-item>img {
     width: 75px;
     height: 75px;
 }
 
-.search-result~.search-item>div {
+.search-result .search-item>div {
     padding-left: 10px;
     margin: 0;
 }
