@@ -59,12 +59,10 @@ function Header() {
         }
     }, [user])
     return (
-        <Navbar sticky="top" className= {matches? "mobile-header" : "header"}>
+        <div  className= {matches? "mobile-header" : "header"}>
             <div className="header-content">
                 <Navbar.Brand className="brand-name"><Nav.Link as={NavLink} to="/home" end className="no-hover"><strong>monvid</strong><FontAwesomeIcon icon={faHotel} /></Nav.Link></Navbar.Brand>
-                {showSearch && normalScreen && <Search showSearch={showSearch} />}
                 {!matches && !normalScreen && <Search />}
-                {matches && <Search />}
 
                 <Nav className="nav" >
                     {normalScreen && <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} size="lg" onClick={handleSearch} />}
@@ -96,10 +94,12 @@ function Header() {
                     }
                 </Nav>
             </div>
+            {matches && <Search />}
+            {showSearch && normalScreen && <Search showSearch={showSearch} />}
             {openSignIn && <SignInModal />}
             {openSignUp && <SignUpModal />}
             <SearchResult />
-        </Navbar>
+        </div>
 
     )
 }
