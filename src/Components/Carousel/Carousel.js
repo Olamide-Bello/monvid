@@ -27,7 +27,7 @@ function ProductsCarousel () {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                    className="carousel-item-img"
+                    className={matches ? "mobile-carousel-img" : "carousel-item-img"}
                     src={amenity}
                     alt="bedding"
                     />
@@ -39,7 +39,7 @@ function ProductsCarousel () {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                    className="carousel-item-img"
+                    className={matches ? "mobile-carousel-img" : "carousel-item-img"}
                     src={furniture}
                     alt="bedding"
                     />
@@ -51,7 +51,7 @@ function ProductsCarousel () {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                    className="carousel-item-img"
+                    className={matches ? "mobile-carousel-img" : "carousel-item-img"}
                     src={tablewares}
                     alt="bedding"
                     />
