@@ -4,7 +4,7 @@ import { GlobalContext } from '../GlobalContext.js'
 import './SearchResult.css'
 
 function SearchResult() {
-    const { searchResult, searchMatch, searchValue } = useContext(GlobalContext)
+    const { searchResult, searchMatch, searchValue, matches } = useContext(GlobalContext)
     return (
         <>
 
@@ -14,7 +14,7 @@ function SearchResult() {
             <>
                 {
                     searchResult && searchResult.length > 0 && searchValue.current ?
-                        <div className='search-result'>
+                        <div className={matches? 'mobile-result' : 'search-result'}>
                             {
                                 searchResult.map((item) => (
                                     <Link to={`/product/${item._id}`} key={item._id} className='result-link'>

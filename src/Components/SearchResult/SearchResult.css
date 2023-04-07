@@ -11,6 +11,18 @@
     border-radius: 10px;
 }
 
+.mobile-result {
+    width: 80vw;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    position: fixed;
+    top: 10vh;
+    left: 10vw;
+    z-index: 5000;
+    border-radius: 10px; 
+}
+
 .search-item {
     display: flex;
     flex-direction: row;
