@@ -9,7 +9,7 @@ function SearchResult() {
         <>
 
             {!searchMatch &&
-                <p className='no-match'>No match found</p>
+                <p className={matches ? 'no-match-mobile' : 'no-match'}>No match found</p>
             }
             <>
                 {
