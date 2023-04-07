@@ -9,7 +9,6 @@ import './Mobile.css'
 import { GlobalContext } from "../GlobalContext.js";
 function ProductsCarousel () {
     const {matches} = useContext(GlobalContext)
-    console.log(matches)
     return (
         <div className="carousel-body">
             <Carousel>

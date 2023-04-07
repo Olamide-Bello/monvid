@@ -7,7 +7,6 @@ function SearchResult() {
     const { searchResult, searchMatch, searchValue, matches } = useContext(GlobalContext)
     return (
         <>
-
             {!searchMatch &&
                 <p className={matches ? 'no-match-mobile' : 'no-match'}>No match found</p>
             }
