@@ -24,7 +24,7 @@ function SearchResult() {
 
                                             <div>
                                                 <h5>{item.name}</h5>
-                                                <p>{item.description}</p>
+                                                {!matches && <p>{item.description}</p>}
                                             </div>
                                         </div>
                                     </Link>

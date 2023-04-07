@@ -5,7 +5,7 @@
     background-color: #fff;
     color: #333;
     position: absolute;
-    bottom: 0;
+    top: 20vh;
     left: 20vw;
     z-index: 1000;
     border-radius: 10px;
