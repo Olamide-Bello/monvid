@@ -162,11 +162,13 @@
 
 .search {
     display: block;
+    position: relative;
 }
 
 .normal-search {
     background-color: #fff;
     margin-top: 5px;
+    position: relative;
 }
 
 .search .searchArea {

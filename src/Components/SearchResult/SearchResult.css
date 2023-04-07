@@ -4,11 +4,12 @@
     padding: 10px;
     background-color: #fff;
     color: #333;
-    position: fixed;
-    top: 11vh;
+    position: absolute;
+    bottom: -10px;
     left: 20vw;
     z-index: 1000;
     border-radius: 10px;
+    box-shadow: 4px 3px 13px 0px rgba(0, 0, 0, 0.75);
 }
 
 .search-result .search-item {
@@ -37,7 +38,7 @@ a.result-link:not(:first-of-type)>.search-item  {
     margin: 0;
 }
 
-.search-result~a.result-link {
+.search-result a.result-link {
     color: #333 ;
     font-size: 16px ;
     text-decoration: none;
