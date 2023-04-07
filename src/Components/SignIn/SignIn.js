@@ -45,6 +45,7 @@ function SignInModal() {
         handleUser(dataRef.current.user)
         toast.success("Welcome back!")
         handleModal()
+        window.location.reload(true)
     }
 
     return (

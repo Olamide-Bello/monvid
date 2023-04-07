@@ -190,7 +190,6 @@ function GlobalState({ children }) {
     }, [token])
     useEffect(() => {
         localStorage.setItem("user", JSON.stringify(user));
-        window.location.reload(true)
     }, [user])
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
