@@ -18,7 +18,7 @@ function SearchResult() {
                                 searchResult.map((item) => (
                                     <Link to={`/product/${item._id}`} key={item._id} className='result-link'>
                                         <div className='search-item' >
-                                            <img src={item.image} alt="product" />
+                                            {/* <img src={item.image} alt="product" /> */}
 
                                             <div>
                                                 <h5>{item.name}</h5>

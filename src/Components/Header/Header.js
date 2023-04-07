@@ -98,7 +98,7 @@ function Header() {
             {showSearch && normalScreen && <Search showSearch={showSearch} />}
             {openSignIn && <SignInModal />}
             {openSignUp && <SignUpModal />}
-            {/* <SearchResult /> */}
+            <SearchResult />
         </div>
 
     )
