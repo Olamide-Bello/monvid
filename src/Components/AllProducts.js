@@ -18,7 +18,7 @@ function AllItems
       <div className='all-products'>
         {allProducts.length > 1 ?
           allProducts.map((product) => (
-            <div key={product._id} className="product-card" style={!matches && { background: `url(${product.image}) no-repeat center center/cover` }}>
+            <div key={product._id} className="product-card" style={{ background: !matches &&  `url(${product.image}) no-repeat center center/cover` }}>
               <img src={product.image} alt="product" />
               <Container >
                 <div className="card-title">
