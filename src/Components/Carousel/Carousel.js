@@ -21,7 +21,7 @@ function ProductsCarousel () {
                     <Carousel.Caption className="carousel-des">
                         <h3><strong>Hotel Bedding</strong></h3>
                         <p><strong>Bedsheet, Fitted Sheet, Duvet, Duvet Cover, Towel, Pillow, Tablecloth and more</strong></p>
-                        <button className="carousel-btn">Explore Products</button>
+                        <a href="/category/hotel bedding"><button  className="carousel-btn">Explore Products</button></a>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -33,7 +33,7 @@ function ProductsCarousel () {
                     <Carousel.Caption className="carousel-des">
                         <h3><strong>Amenities</strong></h3>
                         <p><strong>Welcome tray, Soap, Shampoo, Bath gel, Hair dryer and more</strong></p>
-                        <button className="carousel-btn">Explore Products</button>
+                        <a href="/category/amenities"><button className="carousel-btn">Explore Products</button></a>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -45,7 +45,7 @@ function ProductsCarousel () {
                     <Carousel.Caption className="carousel-des">
                         <h3><strong>Furniture & Fixture</strong></h3>
                         <p><strong>Chair, Table, Sofa Sets, Carpet and more </strong></p>
-                        <button className="carousel-btn">Explore Products</button>
+                        <a href="/category/furnitures"><button className="carousel-btn">Explore Products</button></a>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -57,7 +57,7 @@ function ProductsCarousel () {
                     <Carousel.Caption className="carousel-des">
                         <h3><strong>Kitchen & Dining</strong></h3>
                         <p><strong>Tableware, Cookware, Cutlery, Crockery, Serveware and more</strong></p>
-                        <button className="carousel-btn">Explore Products</button>
+                        <a href="/category/kitchen & dining"><button className="carousel-btn">Explore Products</button></a>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

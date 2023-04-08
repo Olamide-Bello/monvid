@@ -12,6 +12,11 @@
     margin-bottom: 30px;
 }
 
+.carousel-des a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .carousel-btn {
     padding: 10px 5px;
     color: #fff;
