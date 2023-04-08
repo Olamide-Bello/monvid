@@ -516,6 +516,10 @@
     border-radius: none;
   }
 
+  .product-card * {
+    color: #555;
+  }
+
   .product-card>img {
     width: 100%;
     height: 150px;
@@ -524,11 +528,9 @@
 
   .card-title {
     height: 40px;
-    color: #555;
   }
 
   .card-btn {
-    color: #555;
     width: 100px;
     border: 2px #555 solid
   }
