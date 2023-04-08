@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo, useRef } from 'react'
 import { useParams, Link } from "react-router-dom"
 import { Container } from 'react-bootstrap/esm/index.js'
 import UseFetch from "./UseFetch.js"
@@ -6,20 +6,36 @@ import { GlobalContext } from './GlobalContext.js';
 import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap/esm/index.js';
 
 function ProductCategory() {
+  const upperCase = useRef(null)
   const { name } = useParams()
   const { category } = useContext(GlobalContext)
   const data = UseFetch(`https://api-monvid.onrender.com/item/category/?catName=${name}`)
 
+  useMemo(() => {
+    if (name) {
+      const copy = name
+      let arr = typeof copy === "string" ? copy.split(" ") : ""
+      let joined= []
+
+      for (let i = 0; i <= arr.length; i++) {
+        const initials = (typeof arr[i] === "string" ? arr[i].charAt(0).toUpperCase() + arr[i].slice(1) : "")
+        joined.push(initials)
+      }
+      upperCase.current = joined.join(" ")
+      console.log(upperCase)
+    }
+  }, [name])
+
   return (
     <div>
       <div className='promo'>20% off on all products</div>
-        <Breadcrumb className='breadcrumb-dk'>
-          <BreadcrumbItem href="/home">Home</BreadcrumbItem>
-          <BreadcrumbItem href={`/category/${name}`} active>{name}</BreadcrumbItem>
-        </Breadcrumb>
+      <Breadcrumb className='breadcrumb-dk'>
+        <BreadcrumbItem href="/home">Home</BreadcrumbItem>
+        <BreadcrumbItem href={`/category/${name}`} active>{name}</BreadcrumbItem>
+      </Breadcrumb>
       <Container>
         <div className="category-title">
-          <h3><strong>{category}</strong></h3>
+          <h3><strong>{upperCase.current}</strong></h3>
         </div>
         <div className='all-products'>
           {data.length >= 1 ?
@@ -30,7 +46,7 @@ function ProductCategory() {
                   <div className="card-title">
                     <h5>{product.name}</h5>
                   </div>
-                  <Link to={`/product/${product.category}/${product._id}`}><button className="card-btn">View product</button></Link>
+                  <Link to={`/product/${product.category}/${product._id}`}><button className="card-btn">View</button></Link>
                 </Container>
               </div>
             )) :
