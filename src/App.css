@@ -535,5 +535,11 @@
     border: 2px #555 solid
   }
 
+  .card-btn:hover {
+    background-color: green;
+    color: #fff;
+    border: none;
+  }
+
 
 }
