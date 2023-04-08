@@ -25,7 +25,7 @@ function AllItems
                   <h5>{product.name}</h5>
                 </div>
                 <div>
-                  <Link to={`/product/${product.category}/${product._id}`}><button className="card-btn">View product</button></Link>
+                  <Link to={`/product/${product.category}/${product._id}`}><button className="card-btn">View</button></Link>
                   {!matches && <button id={product._id} type='submit' className='card-add-cart-btn' onClick={addToCart}>Add to cart</button>}
                 </div>
               </Container>
