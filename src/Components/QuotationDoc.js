@@ -3,7 +3,7 @@ import { Document, Page, Text, View, StyleSheet} from '@react-pdf/renderer';
 import moment from "moment/moment.js";
 
 
-function QuotationDoc({ cart, bill, user, cartId }) {
+function QuotationDoc({ cart, bill, user, cartId, putComma }) {
     return (
         <Document>
             <Page size="A4" style={styles.page}>
@@ -64,16 +64,16 @@ function QuotationDoc({ cart, bill, user, cartId }) {
                                     <Text style={styles.tableCell}>{list.quantity}</Text>
                                 </View>
                                 <View style={styles.tableCol}>
-                                    <Text style={styles.tableCell}>{list.price}</Text>
+                                    <Text style={styles.tableCell}>{putComma(list.price)}</Text>
                                 </View>
                                 <View style={styles.tableCol}>
-                                    <Text style={styles.tableCell}>{list.price * list.quantity}</Text>
+                                    <Text style={styles.tableCell}>{putComma(list.price * list.quantity)}</Text>
                                 </View>
                             </View>
                         })}
                     </View>
                     <View style={styles.Total}>
-                        <Text>Bill: NGN{bill}</Text>
+                        <Text>Bill: NGN{putComma(bill)}</Text>
                     </View>
                     <View style={styles.Box}>
                         <Text style={{ marginTop: '40px' }}>_____________________</Text>

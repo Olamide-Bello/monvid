@@ -19,7 +19,6 @@ function Header() {
     const [showSearch, setShowSearch] = useState(false)
     const userInitials = useRef(null)
     const navigate = useNavigate()
-    console.log(logged)
     const handleCart = () => {
         if (!logged) {
             handleModal()
@@ -77,7 +76,7 @@ function Header() {
                         <NavDropdown.Item as={NavLink} to={`/category/furnitures`} onClick={handleCategory} name="Furnitures" className='dropdown'>Furniture & Fixture</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to={`/category/kitchen & dining`} onClick={handleCategory} name="Kitchen & Dining" className='dropdown'>Kitchen & Dining</NavDropdown.Item>
                     </NavDropdown>
-                    <button onClick={handleCart} className="navlinks-item cart"><FontAwesomeIcon className="color-red" icon={faShoppingCart} /><sup><span className="cart-length">{cart.length || 0}</span></sup></button>
+                    <button onClick={handleCart} className="navlinks-item cart-icon"><FontAwesomeIcon className="color-red" icon={faShoppingCart} /><sup><span className="cart-length">{cart.length || 0}</span></sup></button>
                     {matches && !logged && <FontAwesomeIcon onClick={handleSignIn} style={{color: "orangered"}} icon={faUserCircle} size= "2x"/>}
                     {!logged && !matches && <Nav.Link as={NavLink} onClick={handleSignIn} className="navlinks-item"><FontAwesomeIcon icon={faUser} /> Sign in</Nav.Link>}
                     {!logged && !matches && <button className="account-btn" onClick={handleSignUp}>Create Account</button>}

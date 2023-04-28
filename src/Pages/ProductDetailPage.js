@@ -4,7 +4,7 @@ import Header from '../Components/Header/Header.js';
 import Footer from '../Components/Footer.js';
 import FloatingButton from '../Components/FloatingButton.js';
 const Detail = React.lazy(() =>
-  import('../Components/ProductDetail.js')
+  import('../Components/ProductDetail/ProductDetail.js')
 )
 
 function ProductDetailPage() {

@@ -207,3 +207,9 @@
     top: 10px;
     left: 10px;
 }
+
+.cart-icon {
+    background-color: #fff;
+    padding: 10px;
+    border: none;
+  }

@@ -1,0 +1,32 @@
+.cart-item-mobile {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 10px;
+    border-bottom: 1px #ddd solid;
+}
+.cart-item-mobile:last-of-type {
+    border-bottom: none;
+}
+
+
+.cart-item-mobile img {
+    width: 100px;
+    height: 100px;
+}
+
+.cart-item-detail {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.cart-item-mobile-title {
+    width: 150px;
+}
+
+.delete-btn-mobile {
+    color: #b70000;
+    align-self:flex-start;
+}

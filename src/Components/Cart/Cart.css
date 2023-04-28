@@ -1,0 +1,95 @@
+.empty-cart {
+    height: calc(50vh - 20px);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cart {
+    background-color: #fff;
+    padding: 10px;
+    border: none;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+    border-bottom: 1px #ddd solid;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item :not(.cart-item-img) {
+    align-self: center;
+}
+
+.cart-item img {
+    width: 200px;
+    height: 200px;
+}
+
+.cart-item-title {
+    width: 250px;
+}
+
+.delete-btn {
+    color: #b70000;
+}
+
+.bill {
+    background-color: #b70000;
+    color: #fff;
+    text-align: right;
+    font-weight: 500;
+    padding: 10px 15px;
+
+}
+
+.bill p {
+    padding-right: 10px;
+}
+
+.cart-link-btn,
+.quotation-link-btn {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.continue-btn {
+    padding: 15px 10px;
+    background-color: green;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    margin-right: 10px;
+}
+
+.quotation-btn {
+    padding: 15px 10px;
+    background-color: orangered;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+}
+
+.continue-btn:hover,
+.quotation-btn:hover,
+.back-btn:hover,
+.whatsapp-btn:hover,
+.print-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#number {
+    width: 50px;
+    text-align: center;
+    margin: 5px;
+}
+
+#number:focus {
+    outline: orangered;
+    border: 1px orangered solid
+}

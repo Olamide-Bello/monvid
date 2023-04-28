@@ -1,0 +1,157 @@
+.detail-card {
+    display: flex;
+    padding-top: 30px;
+}
+
+.detail-card img {
+    height: 70vh;
+    width: 50%;
+    z-index: 110;
+}
+
+.detail {
+    padding: 0 35px;
+    position: relative;
+    background-color: #fff;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.detail::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(35, 35, 154);
+    opacity: 0.1;
+    left: 0px;
+    border-top-right-radius: 90%;
+}
+
+.detail::after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background-color: rgba(243, 70, 8, 0.8);
+    opacity: 0.1;
+    left: 0px;
+    bottom: 0px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 100%;
+}
+
+.detail * {
+    z-index: 100;
+    position: relative;
+}
+
+.detail h3 {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #b70000;
+}
+
+.detail p:first-of-type {
+    color: #145875;
+}
+
+.description {
+    height: 100px;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+
+.add-cart-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+    margin-top: 20px;
+    padding: 5px 10px;
+    width: 200px;
+}
+
+.add-cart-btn:hover {
+    opacity: 0.75;
+}
+
+.suggested-products {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+
+.suggestion-card {
+    height: 300px;
+    width: 300px;
+    color: #fff;
+    position: relative;
+    border-radius: 10px;
+    align-items: center;
+    padding: 15px 5px 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.suggestion-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.suggestion-card * {
+    position: relative;
+    z-index: 100;
+}
+
+.suggestion-card a {
+    text-decoration: none;
+}
+
+@media(max-width: 768px) {
+    .detail-card {
+        flex-direction: column;
+    }
+
+    .detail-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .detail {
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .number {
+        width: 50px;
+    }
+
+    .suggestion-card {
+        width: 150px;
+        height: 260px;
+        background: #fff;
+        border: none;
+    }
+
+    .suggestion-card::before {
+        content: "";
+        background-color: #fff;
+        border-radius: none;
+    }
+
+    .suggestion-card>img {
+        width: 100%;
+        height: 150px;
+
+    }
+
+}

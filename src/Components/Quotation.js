@@ -3,12 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { StyleSheet } from '@react-pdf/renderer';
 import moment from "moment/moment.js";
 import { GlobalContext } from './GlobalContext.js';
-import ConfirmationModal from './ConfirmationModal.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import ConfirmationModal from './ConfirmationModal/ConfirmationModal.js';
 
 function Quotation() {
-    const { cart, bill, user, cartId } = useContext(GlobalContext)
+    const { cart, bill, user, cartId, matches, putComma } = useContext(GlobalContext)
     const [modalState, setModalState] = useState(false)
     const navigate = useNavigate()
     console.log(cart)
@@ -17,78 +15,86 @@ function Quotation() {
         setModalState(!modalState)
     }
 
+    const upperCase = (name) => {
+        let intialised = ""
+        if (name) {
+            const copy = name
+            let arr = typeof copy === "string" ? copy.split(" ") : ""
+            let joined = []
+
+            for (let i = 0; i <= arr.length; i++) {
+                const initials = (typeof arr[i] === "string" ? arr[i].charAt(0).toUpperCase() + arr[i].slice(1) : "")
+                joined.push(initials)
+            }
+            intialised = joined.join(" ")
+        }
+        return intialised
+    }
     const backNavigate = () => {
         navigate('/cart')
     }
 
-    const message= `Hello, just made an order with quotation id "${cartId}" `
-
 
     return (
         <div className='quotation-container'>
-        <div style={styles.page} >
-            <div id='quotation' style={styles.Container}>
-                <div style={styles.DetailCover}>
-                    <div style={styles.BoxLayout}>
-                        <div style={{ width: '70%' }}>
-                            <p>To:</p>
-                            <p>{user.name}</p>
-                            <p>{user.compName}</p>
-                            <p>{user.address}</p>
+            <div style={styles.page} >
+                <div id='quotation' style={styles.Container}>
+                    <div style={styles.DetailCover}>
+                        <div style={styles.BoxLayout}>
+                            <div style={{ width: '70%', justifySelf: 'left' }}>
+                                <p>To:</p>
+                                <p>{upperCase(user.name)},</p>
+                                <p>{user.compName},</p>
+                                <p>{user.address},</p>
+                            </div>
+                        </div>
+                        <div style={styles.BoxLayout2}>
+                            <div style={{ width: '70%', justifySelf: 'right' }}>
+                                <p>Quotation Details:</p>
+                                <p>Quotation No: {cartId}</p>
+                                <p>Date: {moment().format('DD-MM-YYYY')}</p>
+                            </div>
                         </div>
                     </div>
-                    <div style={styles.BoxLayout}>
-                        <div style={{ width: '30%' }}>
-                            <p>Quotation Details:</p>
-                            <p>Quotation No: {cartId}</p>
-                            <p>Date: {moment().format('DD-MM-YYYY')}</p>
-                        </div>
-                    </div>
-                </div>
-                <table style={styles.table}>
-                    <thead style={styles.tableHead}>
-                        <tr>
-                            <th style={styles.th}>S/N</th>
-                            <th style={styles.th2}>name</th>
-                            <th style={styles.th}>Quantity</th>
-                            <th style={styles.th}>Unit Price</th>
-                            <th style={styles.th}>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {cart.map((list, index) => {
-                            return <tr style={styles.tableRow} key={list._id} className='row' >
-                                <td style={styles.tableCol}><p style={styles.tableCell}>{index + 1}</p></td>
-                                <td style={styles.tableCol2}><p style={styles.tableCell}>{list.name}</p></td>
-                                <td style={styles.tableCol}><p style={styles.tableCell}>{list.quantity}</p></td>
-                                <td style={styles.tableCol}><p style={styles.tableCell}>{list.price}</p></td>
-                                <td style={styles.tableCol}><p style={styles.tableCell}>{list.price * list.quantity}</p></td>
+                    <table style={styles.table}>
+                        <thead style={styles.tableHead}>
+                            <tr>
+                                <th style={matches ? styles.th2 : styles.th}>S/N</th>
+                                <th style={matches ? styles.th2 : styles.th}>name</th>
+                                <th style={matches ? styles.th2 : styles.th}>Quantity</th>
+                                <th style={matches ? styles.th2 : styles.th}>Unit Price</th>
+                                <th style={matches ? styles.th2 : styles.th}>Price</th>
                             </tr>
-                        })}
-                        <tr style={styles.Total} className='bill'><p>Bill: &#8358;{bill}</p></tr>
-                    </tbody>
-                </table>
-                <div style={styles.Box}>
-                    <p style={{ marginTop: '40px' }}>________________________</p>
-                    <p style={{ marginLeft: '40px' }}>Signature</p>
-                </div>
-                <div style={styles.Box}>
-                    <p className="">Tel: 07062907183, 08132283377, 09123532183 </p>
-                    <p>E-mail: admin@monvid.com</p>
-                </div>
+                        </thead>
+                        <tbody>
+                            {cart.map((list, index) => {
+                                return <tr style={styles.tableRow} key={list._id} className='row' >
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{index + 1}</p></td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{list.name}</p></td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{list.quantity}</p></td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{putComma(list.price)}</p></td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{putComma(list.price * list.quantity)}</p></td>
+                                </tr>
+                            })}
+                            <tr style={styles.Total} className='bill'><p style={{ marginRight: '10px' }}>Bill: &#8358;{putComma(bill)}</p></tr>
+                        </tbody>
+                    </table>
+                    <div style={styles.Box}>
+                        <p style={{ marginTop: '40px' }}>________________________</p>
+                        <p style={{ marginLeft: '40px' }}>Signature</p>
+                    </div>
+                    <div style={styles.Box}>
+                        <p className="">Tel: 07062907183, 08132283377, 09123532183 </p>
+                        <p>E-mail: admin@monvid.com</p>
+                    </div>
 
+                </div>
+                <div className='quotation-link-btn'>
+                    <button className='back-btn' onClick={backNavigate}>Back </button>
+                    <button className='print-btn' onClick={handleModal} >Print </button>
+                </div>
+                {modalState && <ConfirmationModal handleModal={handleModal} />}
             </div>
-            <div className='quotation-link-btn'>
-                <button className='back-btn' onClick={backNavigate}>Back </button>
-                <a href={`https://web.whatsapp.com/send?phone='+2349123532183'&text=${message}&app_absent=0`} target= '_blank' rel="noreferrer" >
-                    <button className='whatsapp-btn'>
-                    <FontAwesomeIcon icon={faWhatsapp} size="lg"/> Whats'app 
-                    </button>
-                </a>
-                <button className='print-btn' onClick={handleModal} >Print </button>
-            </div>
-            {modalState && <ConfirmationModal handleModal={handleModal} />}
-        </div>
         </div>
     )
 }
@@ -102,8 +108,8 @@ const styles = StyleSheet.create({
         paddingTop: '30px'
     },
     Container: {
-        width: '80vw',
-        margin: '20px 10%',
+        width: '90vw',
+        margin: '20px 5%',
         backgroundColor: '#fff'
     },
     Toolbar: {
@@ -116,22 +122,26 @@ const styles = StyleSheet.create({
     },
 
     BoxLayout: {
-        padding: '0 0 0 10px',
+        padding: '0 0 10px',
         height: 'auto',
         textAlign: 'left',
-        display: 'inline-block',
         verticalAlign: 'top',
-        flexDirection: "row",
+        display: 'grid',
         fontSize: 16
+    },
+    BoxLayout2: {
+        padding: '0 0 10px',
+        height: 'auto',
+        textAlign: 'right',
+        verticalAlign: 'top',
+        display: 'grid',
+        fontSize: 12,
     },
 
     DetailCover: {
         width: '90%',
-        flexDirection: "row",
         margin: '20px auto',
         fontSize: '16px',
-        display: 'flex',
-        justifyContent: 'space-between'
     },
     table: {
         display: "table",
@@ -163,7 +173,7 @@ const styles = StyleSheet.create({
         verticalAlign: 'middle',
         textAlign: 'center',
         flexDirection: "row",
-        width: '12%',
+        width: '20%',
         padding: '5px',
     },
 
@@ -173,8 +183,9 @@ const styles = StyleSheet.create({
         verticalAlign: 'middle',
         textAlign: 'center',
         flexDirection: "row",
-        width: '52%',
-        padding: '5px',
+        width: '20%',
+        padding: '5px 5px 10px',
+        fontSize: '14px',
     },
 
     tableCol2: {
@@ -182,22 +193,18 @@ const styles = StyleSheet.create({
         borderStyle: "solid",
         flexDirection: "row",
         textAlign: 'center',
-        padding: '5px',
-        width: '52%'
+        padding: '5px 5px 10px',
+        width: '20%',
+        fontFamily: '14px',
     },
     tableCol: {
         display: 'inline-block',
         borderStyle: "solid",
         padding: '5px',
-        width: '12%',
+        width: '20%',
         textAlign: 'center'
     },
 
-    tableCell: {
-        // margin: "auto", 
-        // marginTop: 5, 
-        fontSize: 16
-    },
 
     P: {
         margin: 0,

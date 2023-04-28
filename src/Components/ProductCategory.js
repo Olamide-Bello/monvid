@@ -1,14 +1,12 @@
-import React, { useContext, useMemo, useRef } from 'react'
+import React, { useMemo, useRef } from 'react'
 import { useParams, Link } from "react-router-dom"
 import { Container } from 'react-bootstrap/esm/index.js'
 import UseFetch from "./UseFetch.js"
-import { GlobalContext } from './GlobalContext.js';
 import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap/esm/index.js';
 
 function ProductCategory() {
   const upperCase = useRef(null)
   const { name } = useParams()
-  const { category } = useContext(GlobalContext)
   const data = UseFetch(`https://api-monvid.onrender.com/item/category/?catName=${name}`)
 
   useMemo(() => {
@@ -22,7 +20,6 @@ function ProductCategory() {
         joined.push(initials)
       }
       upperCase.current = joined.join(" ")
-      console.log(upperCase)
     }
   }, [name])
 
@@ -31,7 +28,7 @@ function ProductCategory() {
       <div className='promo'>20% off on all products</div>
       <Breadcrumb className='breadcrumb-dk'>
         <BreadcrumbItem href="/home">Home</BreadcrumbItem>
-        <BreadcrumbItem href={`/category/${name}`} active>{name}</BreadcrumbItem>
+        <BreadcrumbItem href={`/category/${name}`} active>{upperCase.current}</BreadcrumbItem>
       </Breadcrumb>
       <Container>
         <div className="category-title">

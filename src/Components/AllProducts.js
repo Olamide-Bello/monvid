@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom";
-import { Container } from 'react-bootstrap/esm/index.js'
+import { Container, Spinner } from 'react-bootstrap/esm/index.js'
 import { GlobalContext } from "./GlobalContext.js"
 
 function AllItems
   () {
-  const { allProducts, handleCart, matches } = useContext(GlobalContext)
+  const { allProducts, handleCart, matches, loading } = useContext(GlobalContext)
   const addToCart = (e) => {
     const qty = "1"
     handleCart(e.target.id, qty)
@@ -15,6 +15,10 @@ function AllItems
       <div className="category-title">
         <h3><strong>All Products</strong></h3>
       </div>
+
+      { loading ? 
+      <Spinner animation="border" role="status"/>
+      :
       <div className='all-products'>
         {allProducts.length > 1 ?
           allProducts.map((product) => (
@@ -34,6 +38,7 @@ function AllItems
           <p>No product to display</p>
         }
       </div>
+      }
     </Container>
   )
 }

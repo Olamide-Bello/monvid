@@ -4,7 +4,7 @@ import Footer from '../Components/Footer.js'
 import { Spinner } from 'react-bootstrap'
 import FloatingButton from '../Components/FloatingButton.js'
 const Cart = React.lazy(() =>
-    import('../Components/Cart.js')
+    import('../Components/Cart/Cart.js')
 )
 
 function CartPage() {
