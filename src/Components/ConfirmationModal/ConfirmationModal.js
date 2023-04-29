@@ -12,6 +12,7 @@ function ConfirmationModal({ handleModal }) {
             <QuotationDoc user={user} cart={cart} bill={bill} cartId={cartId} putComma={putComma} />
         ).toBlob();
         saveAs(blob, "Quotation.pdf");
+        handleWhatsapp()
         // let fd = new FormData();
         // fd.append('myfile', blob);
 
@@ -24,11 +25,7 @@ function ConfirmationModal({ handleModal }) {
     }
     const message = `Hello, just made an order with quotation id "${cartId}" `
     const handleWhatsapp = () => {
-        window.location.href = `https://web.whatsapp.com/send?phone='+2349123532183'&text=${message}&app_absent=0`
-    }
-    const handleFunctions = async () => {
-        await handlePDF()
-        await handleWhatsapp()
+        window.location.href = `https://wa.me/2349123532183?text=${message}&app_absent=0`
     }
     return (
         <div className='modal-container'>
@@ -36,7 +33,7 @@ function ConfirmationModal({ handleModal }) {
                 <h5>Confirm Printing...</h5>
                 <p>This will redirect after download to our whatsapp page to finalize order</p>
                 <button className='back-btn' onClick={handleModal}>Cancel</button>
-                <button className='print-btn' onClick={handleFunctions}>Print</button>
+                <button className='print-btn' onClick={handlePDF}>Print</button>
             </div>
         </div>
         )

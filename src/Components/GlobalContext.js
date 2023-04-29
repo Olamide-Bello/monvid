@@ -86,10 +86,8 @@ function GlobalState({ children }) {
             let num = ""
             for (let i=0; i <= backward.length - 1; i++) {
                 i % 3 === 0 && i !== 0 ? num += `,${backward[i]}` : num += backward[i]
-                console.log(backward[i])
             }
             const forward = num.split("").reverse().join("")
-            console.log(forward)
             return forward
         }
     }
