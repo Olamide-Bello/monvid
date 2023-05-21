@@ -87,6 +87,10 @@
   overflow: hidden;
 }
 
+.card-title h5 {
+  color: #fff;
+}
+
 .card-btn {
   padding: 10px 5px;
   color: #fff;

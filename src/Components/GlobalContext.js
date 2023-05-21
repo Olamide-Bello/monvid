@@ -25,6 +25,7 @@ export const GlobalContext = createContext({
     openSignUp: false,
     loading: false,
     user: {},
+    token: "",
     handleUser: () => { },
     matches: window.matchMedia("(max-width: 768px)").matches,
     normalScreen: window.matchMedia("(min-width: 768px) and (max-width: 1100px)").matches
@@ -301,6 +302,7 @@ function GlobalState({ children }) {
         openSignIn,
         openSignUp,
         user,
+        token,
         handleUser,
         normalScreen
     }

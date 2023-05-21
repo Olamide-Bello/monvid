@@ -8,7 +8,7 @@ function Footer() {
         <footer className='footer'>
             <div className='socials'>
                 <FontAwesomeIcon className='footer-icon' style={{ color: "blue" }} icon={faFacebook} size="2x" />
-                <FontAwesomeIcon className='footer-icon' style={{ color: "green" }} icon={faWhatsapp} size="2x" />
+                <a href='https://wa.me/2349123532183' target="_blank" rel='noreferrer' ><FontAwesomeIcon className='footer-icon' style={{ color: "green" }} icon={faWhatsapp} size="2x" /></a>
                 <FontAwesomeIcon className='footer-icon' style={{ color: "#00acee" }} icon={faTwitter} size="2x" />
                 <a href='https://instagram.com/monvid_ventures?r=nametag' target="_blank" rel="noreferrer"><FontAwesomeIcon className='footer-icon' style={{ color: "#fbad50" }} icon={faInstagram} size="2x" /></a>
             </div>

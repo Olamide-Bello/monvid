@@ -9,7 +9,6 @@ function Quotation() {
     const { cart, bill, user, cartId, matches, putComma } = useContext(GlobalContext)
     const [modalState, setModalState] = useState(false)
     const navigate = useNavigate()
-    console.log(cart)
 
     const handleModal = () => {
         setModalState(!modalState)
@@ -69,14 +68,14 @@ function Quotation() {
                         <tbody>
                             {cart.map((list, index) => {
                                 return <tr style={styles.tableRow} key={list._id} className='row' >
-                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{index + 1}</p></td>
-                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{list.name}</p></td>
-                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{list.quantity}</p></td>
-                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{putComma(list.price)}</p></td>
-                                    <td style={matches ? styles.tableCol2 : styles.tableCol}><p style={styles.tableCell}>{putComma(list.price * list.quantity)}</p></td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}>{index + 1}</td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}>{list.name}</td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}>{list.quantity}</td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}>{putComma(list.price)}</td>
+                                    <td style={matches ? styles.tableCol2 : styles.tableCol}>{putComma(list.price * list.quantity)}</td>
                                 </tr>
                             })}
-                            <tr style={styles.Total} className='bill'><p style={{ marginRight: '10px' }}>Bill: &#8358;{putComma(bill)}</p></tr>
+                            <tr style={styles.Total} className='bill'>Bill: &#8358;{putComma(bill)}</tr>
                         </tbody>
                     </table>
                     <div style={styles.Box}>

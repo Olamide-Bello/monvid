@@ -8,7 +8,6 @@ import './Mobile.css'
 
 function Cart() {
     const { cart, deleteItem, handleCart, bill, matches, putComma } = useContext(GlobalContext)
-    console.log(bill)
     const handleQty = (e) => {
         handleCart(e.target.dataset.productid, e.target.value)
     }
