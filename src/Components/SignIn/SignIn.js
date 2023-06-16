@@ -42,6 +42,7 @@ function SignInModal() {
         const response = await fetch('https://api-monvid.onrender.com/users/login', requestOptions)
         // const response = await fetch('http://localhost:3000/users/login', requestOptions)
         const result = await response.json()
+        console.log(result)
         dataRef.current= result
         logUser(dataRef.current.token)
         handleUser(dataRef.current.user)

@@ -33,7 +33,8 @@ function ConfirmationModal({ handleModal }) {
         // const response = await fetch("http://localhost:3000/cart/checkout", requestOptions)
         console.log(response)
         if (response.status === 200) {
-            // const result = await response.json()
+            const result = await response.json()
+            console.log(result)
             toast.success("Checkout successful!")
         }
 

@@ -18,7 +18,7 @@ function SearchResult() {
                         <div className={matches? 'mobile-result' : 'search-result'}>
                             {
                                 searchResult.map((item) => (
-                                    <Link to={`/product/${item._id}`} key={item._id} className='result-link'>
+                                    <Link to={`/product/${item.category}/${item._id}`} key={item._id} className='result-link'>
                                         <div className='search-item' >
                                             <img src={item.image} alt="product" />
 
